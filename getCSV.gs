@@ -1,7 +1,6 @@
 // get CSV
-function getCSV(id,sheetname,url) {
-  var spreadsheet = SpreadsheetApp.openById(id);
-  var sheet = spreadsheet.getSheetByName(sheetname);
+function getCSV(url) {
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
   // get
   var blob = UrlFetchApp.fetch(url).getBlob();
   var data = blob.getDataAsString();
